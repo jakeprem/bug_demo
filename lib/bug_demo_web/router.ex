@@ -5,6 +5,7 @@ defmodule BugDemoWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
+    plug Phoenix.LiveView.Flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -16,11 +17,6 @@ defmodule BugDemoWeb.Router do
   scope "/", BugDemoWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", TheView
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", BugDemoWeb do
-  #   pipe_through :api
-  # end
 end
