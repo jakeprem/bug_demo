@@ -17,6 +17,6 @@ defmodule BugDemoWeb.Router do
   scope "/", BugDemoWeb do
     pipe_through :browser
 
-    live "/", TheView
+    live "/stuff", TheView
   end
 end
